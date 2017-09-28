@@ -8,7 +8,8 @@ class StorePicker extends React.Component {
     // }
     goToStore(event) {
         event.preventDefault();
-        console.log(this.storeInput.value)
+        const storeId = (this.storeInput.value)
+        this.context.router.transitionTo(`/store/${storeId}`)
         // console.log(this.goToStore());
         // first grab texzt from box
         /// then transition the url to store/:storeId
@@ -25,6 +26,10 @@ class StorePicker extends React.Component {
             </form>
         )
     }
+}
+
+StorePicker.contextTypes = {
+    router: React.PropTypes.object
 }
 
 export default StorePicker
