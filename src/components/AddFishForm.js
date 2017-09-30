@@ -11,6 +11,10 @@ class AddFishForm extends React.Component {
             image: this.image.value
         }
         console.log(fish)
+        // we have passed the addFish function from the App component
+        // to our Inventory component and then to our AddFishForm component
+        // The addFish function is within our props on our AddFishForm component
+        this.props.addFish(fish)
     }
     render() {
         return (
